@@ -294,3 +294,4 @@ Thumbs.db #thumbnail cache on Windows
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm,macos,visualstudiocode
+config.ini
