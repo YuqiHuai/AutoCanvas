@@ -8,6 +8,14 @@ class Assignment:
         self.endpoint = f"https://canvas.eee.uci.edu/api/v1/courses/{course_id}/assignments/{assignment_id}"
         self.api = API.get_instance()
 
+    def list_submissions(self, per_page=100):
+        endpoint = self.endpoint + '/submissions'
+        params = {
+            "per_page": per_page
+        }
+        response = self.api.get_paginated(endpoint, params)
+        return response
+
     def grade_assignment(self, student_id: str, grade: float, comment: str):
         endpoint = self.endpoint + f"/submissions/{student_id}"
         data = {
