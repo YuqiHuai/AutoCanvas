@@ -40,7 +40,7 @@ def parse_discussion_id(url: str) -> str:
 
 
 def parse_assignment_id(url: str) -> str:
-    result = re.search(r"\/assignments\/(\d+)\/?")
+    result = re.search(r"\/assignments\/(\d+)\/?", url)
     if result:
         return result.group(1)
     return ''
